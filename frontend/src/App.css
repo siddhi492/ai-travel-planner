@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700&display=swap');
+
+body, html {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar h1 { 
+  font-weight: 700; 
+  font-size: 28px; 
+  color: #4f46e5; 
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px 60px;
+  overflow: hidden;
+}
+.hero h2 {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+.hero p {
+  font-size: 20px;
+  color: #64748b;
+}
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  animation: float 6s ease-in-out infinite;
+}
+.shape1 {
+  width: 180px; height: 180px;
+  background: linear-gradient(135deg,#6366f1,#a78bfa);
+  top: 20px; left: 30px;
+}
+.shape2 {
+  width: 120px; height: 120px;
+  background: linear-gradient(135deg,#f472b6,#facc15);
+  bottom: 30px; right: 50px;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Form Card */
+.formCard {
+  max-width: 600px;
+  margin: -40px auto 60px;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.inputGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.inputGroup .icon {
+  position: absolute;
+  left: 16px;
+  font-size: 18px;
+  color: #6366f1;
+}
+input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Transport Pills */
+.transportWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+.transport-pill {
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f1f5f9;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+.transport-pill.active {
+  background: linear-gradient(135deg,#6366f1,#a78bfa);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(99,102,241,0.35);
+}
+.transport-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Buttons */
+.generateBtn, .downloadBtn {
+  padding: 16px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg,#6366f1,#a78bfa);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(99,102,241,0.35);
+}
+.generateBtn:hover, .downloadBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(79,70,229,0.5);
+}
+
+/* Loader */
+.loader {
+  margin: 50px auto;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to{ transform: rotate(360deg); } }
+
+/* Plan Cards */
+.planWrapper {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  gap: 28px;
+  padding: 0 20px;
+}
+
+.planCard {
+  background: #fff;
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.planCard:hover { transform: translateY(-5px); }
+.planHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.planHeader h3 { font-size: 22px; font-weight: 700; }
+.badge { padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.success { background: #dcfce7; color: #16a34a; animation: pulse 2s infinite; }
+.danger { background: #fee2e2; color: #dc2626; animation: pulse 2s infinite; }
+@keyframes pulse {0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
+
+.totalCost { font-size: 26px; font-weight: 700; color: #4f46e5; margin-bottom: 16px; }
+
+.dayCard {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 16px;
+  margin-top: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dayCard:hover { transform: scale(1.03); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+
+/* Responsive */
+@media(max-width:768px){
+  .formCard{padding:30px 20px;}
+  .hero h2{font-size:36px;}
+  .totalCost{font-size:22px;}
+}
